@@ -18,17 +18,11 @@ function getRoute(name){
     return routes.filter(router => router.name == name)[0]
 }
 
-function obterRotaPeloCaminho(path){
-    return routes.filter(router => router.path == path)[0]
-}
-
-
-//chega nas propriedades da rota se ela quer autenticacao
 function routeRequireAuth(path){
     let secureRoute = routes.filter(route => route.requireAuth && route.path == path) 
     return secureRoute.length > 0 
 }
 
 export {
-    router, routes, getRoute,obterRotaPeloCaminho, routeRequireAuth
+    router, routes, getRoute, routeRequireAuth
 }
